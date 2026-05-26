@@ -42,7 +42,7 @@ flowchart LR
 ## What you will learn
 
 - How to prepare and split a labelled text dataset
-- How to train a subword tokenizer (WordPiece, see @tip-tokenizer) on domain-specific text
+- How to train a subword tokenizer (WordPiece) on domain-specific text (tokenizers are introduced in @sec-tokenizer)
 - How to configure and train a neural text classifier end-to-end
 - How to load a pretrained model from MLflow and run inference
 - How to interpret predictions using the [Captum](https://captum.ai/docs/introduction) package
@@ -286,13 +286,7 @@ value_encoder = ValueEncoder(label_encoder=encoder)
 
 :::
 
-# Applying a tokenizer
-
-::: {#tip-tokenizer .callout-tip collapse="true"}
-## What is a tokenizer?
-
-A **tokenizer** converts raw text into a sequence of integers that a neural network can process. It works in three steps: it first **splits** the text into small units called **tokens** (words, subword fragments, or characters); it then **maps** each token to a unique integer using a fixed vocabulary; finally it **pads or truncates** the sequence to a uniform length so all inputs have the same shape. Because neural networks can only work with numbers, every text classification pipeline starts with this conversion step.
-:::
+# Applying a tokenizer {#sec-tokenizer}
 
 ## Why tokenization?
 
